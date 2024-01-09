@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+.wrapper {
+  background-color: var(--softBg);
+  padding: 150px 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+.socialButton {
+
+    width: auto;
+    display: block;
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+}
+.socialButton:first-child{
+    background-color: #ff5555;
+
+}
+.socialButton:nth-child(2){
+    background-color: #000000;
+
+}
+.socialButton:last-child{
+    background-color: #5555ff;
+
+}
+.logoGoogle{
+    width: 22px;
+    height: 22px;
+}
+.logoGithub{
+    width: 25px;
+    height: 25px;
+}
+.logoFacebook{
+    width: 25px;
+    height: 25px;
+}
+.google{
+  padding-top: 5px;
+    text-align: center;
+   
+}
+.github{
+    padding-top: 5px;
+      text-align: center;
+     
+  }
+  .facebook{
+    padding-top: 5px;
+      text-align: center;
+     
+  }
+
+@media screen and (max-width:768px) {
+    .wrapper{
+        padding: 50px 100px;
+    }
+    
+}
+@media screen and (max-width:640px) {
+    .wrapper{
+        padding: 40px ;
+        gap: 30px;
+    }
+    .socialButton{
+        font-weight: 300;
+        font-size: 14px;
+        padding: 15px;
+    }
+    
+}
