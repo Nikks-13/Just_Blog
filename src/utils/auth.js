@@ -18,4 +18,8 @@ export const authOptions = {
   ],
 };
 
+
+
+//this is to verfy user on server side
+
 export const getAuthSession = () => getServerSession(authOptions);

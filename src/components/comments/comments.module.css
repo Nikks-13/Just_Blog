@@ -1,10 +1,11 @@
-.cntainer {
+.container {
   margin-top: 50px;
 }
 .title {
   text-align: center;
   color: var(--softTextColor);
   margin-bottom: 30px;
+  min-width: 900px;
 }
 .write {
   display: flex;
@@ -57,6 +58,8 @@
 .desc {
    font-size: 18px;
    font-weight: 300;
+   min-width: 900px;
+  
 }
 .commentLogin {
     margin:5px 0px;
