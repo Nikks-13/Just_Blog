@@ -23,17 +23,6 @@ const page = () => {
             <FaGoogle className={styles.logoGoogle} />
           </div>
         </div>
-        <div className={styles.socialButton}>
-          Sign in with Github
-          <div className={styles.github}></div>
-          <FaGithub className={styles.logoGithub} />
-        </div>
-        <div className={styles.socialButton}>
-          Sign in with Facebook
-          <div className={styles.facebook}>
-            <FaFacebook className={styles.logoFacebook} />
-          </div>
-        </div>
       </div>
     </div>
   );

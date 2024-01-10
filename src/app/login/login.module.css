@@ -28,41 +28,18 @@
     background-color: #ff5555;
 
 }
-.socialButton:nth-child(2){
-    background-color: #000000;
 
-}
-.socialButton:last-child{
-    background-color: #5555ff;
-
-}
 .logoGoogle{
     width: 22px;
     height: 22px;
 }
-.logoGithub{
-    width: 25px;
-    height: 25px;
-}
-.logoFacebook{
-    width: 25px;
-    height: 25px;
-}
+
 .google{
   padding-top: 5px;
     text-align: center;
    
 }
-.github{
-    padding-top: 5px;
-      text-align: center;
-     
-  }
-  .facebook{
-    padding-top: 5px;
-      text-align: center;
-     
-  }
+
 
 @media screen and (max-width:768px) {
     .wrapper{
