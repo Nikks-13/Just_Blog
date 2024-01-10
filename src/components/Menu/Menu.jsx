@@ -10,8 +10,8 @@ const Menu = () => {
       <h2 className={styles.subtitle}>{"what's hot"}</h2>
       <h1 className={styles.title}>Most Popular</h1>
      <MenuPosts withImage={false} />
-      <h2 className={styles.subtitle}>{"choosen by editor"}</h2>
-      <h1 className={styles.title}>Editors Pick</h1>
+    
+      <h1 className={styles.title}>Categories</h1>
      <MenuCategories/>
       <h2 className={styles.subtitle}>{"choosen by editor"}</h2>
       <h1 className={styles.title}>Editors Pick</h1>

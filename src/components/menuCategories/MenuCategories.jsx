@@ -12,31 +12,31 @@ const MenuCategories = () => {
         Style
       </Link>
       <Link
-        href="/blog?cat=style"
+        href="/blog?cat=fashion"
         className={`${styles.fashion} ${styles.categoryItem}`}
       >
         Fashion
       </Link>
       <Link
-        href="/blog?cat=style"
+        href="/blog?cat=food"
         className={`${styles.food} ${styles.categoryItem}`}
       >
         Food
       </Link>
       <Link
-        href="/blog?cat=style"
+        href="/blog?cat=travel"
         className={`${styles.travel} ${styles.categoryItem}`}
       >
         Travel
       </Link>
       <Link
-        href="/blog?cat=style"
+        href="/blog?cat=culture"
         className={`${styles.culture} ${styles.categoryItem}`}
       >
         Culture
       </Link>
       <Link
-        href="/blog?cat=style"
+        href="/blog?cat=coding"
         className={`${styles.coding} ${styles.categoryItem}`}
       >
         Coding

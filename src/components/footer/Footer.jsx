@@ -1,50 +1,44 @@
+"use client"
 import React from 'react'
-import styles from "./footer.module.css"
-import Image from 'next/image'
-import Link from 'next/link'
+import styled from 'styled-components'
+
+const Container=styled.div`
+margin:0 10px ;
+margin-bottom:10px;`
+const Div=styled.div`
+padding: 20px;
+text-align: center;
+border-radius: 6px;`
+const NameDiv=styled.div`
+font-size: 26px;
+margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--softTextColor);
+    font-family: 'Yatra One';
+    @media only screen and (max-width: 600px){
+      font-size:15px;
+    
+    }`
+const CopyrightDiv=styled.div`
+ color: var(--softTextColor);
+font-family: 'Laila';
+    font-size: 22px;
+    margin-top: 10px;
+
+    @media only screen and (max-width: 600px){
+      font-size:13px;
+    
+    }    `
+const Span=styled.span`
+color:red;`
 const Footer = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.info}>
-        <div className={styles.logo}>
-          <Image  src='/logo.png' alt='' width={50} height={50}/>
-          <h1 className={styles.logoText}>Blogg</h1>
-        </div>
-        <p className={styles.desc}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat non facilis corrupti culpa est, accusamus itaque quasi reiciendis deleniti quae!</p>
-        <div className={styles.icons}>
-          <Image src='/facebook.png' alt='' width={18} height={18}/>
-          <Image src='/instagram.png' alt='' width={18} height={18}/>
-          <Image src='/tiktok.png' alt='' width={18} height={18}/>
-          <Image src='/youtube.png' alt='' width={18} height={18}/>
-        </div>
-      </div>
-      <div className={styles.links}>
-        <div className={styles.list}>
-          <span className={styles.listTitle}>Links</span>
-          <Link href='/'>Homepage</Link>
-          <Link href='/'>Blog</Link>
-          <Link href='/'>About</Link>
-          <Link href='/'>Contact</Link>
-
-        </div>
-        <div className={styles.list}>
-          <span className={styles.listTitle}>Tags</span>
-          <Link href='/'>Style</Link>
-          <Link href='/'>Fashion</Link>
-          <Link href='/'>Coding</Link>
-          <Link href='/'>Travel</Link>
-
-        </div>
-        <div className={styles.list}>
-          <span className={styles.listTitle}>Social</span>
-          <Link href='/'>Facebook</Link>
-          <Link href='/'>Instagram</Link>
-          <Link href='/'>Tiktok</Link>
-          <Link href='/'>Youtube</Link>
-
-        </div>
-      </div>
-    </div>
+    <Container>
+    <Div>
+      <NameDiv > Made with  <Span >&hearts;</Span> By Nixx </NameDiv>
+      <CopyrightDiv >© 2024 Just Blog</CopyrightDiv>
+    </Div>
+  </Container>
   )
 }
 

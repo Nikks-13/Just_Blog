@@ -52,21 +52,25 @@
   .imageContainer {
     flex: 1;
     height: 350px;
-    position: relative;
+    position: relative; 
+ 
   }
   
   .image {
     object-fit: cover;
+   
   }
   
   .content {
     display: flex;
     gap: 50px;
+   
   }
   
   .posts {
     flex: 5;
     margin-top: 60px;
+
   }
   .titleDesc{
     margin: 20px 0 10px 0;
@@ -75,7 +79,8 @@
     font-size: 20px;
     font-weight: 300;
     margin-bottom: 20px;
-   
+
+       
   }
   .comments{
     margin-top: 40px;

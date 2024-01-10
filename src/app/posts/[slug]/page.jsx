@@ -44,7 +44,7 @@ const SinglePage = async ({ params }) => {
         )}
       </div>
       <div className={styles.content}>
-        <div className={styles.post}>
+        <div className={styles.posts}>
           <div
             className={styles.description}
             dangerouslySetInnerHTML={{ __html: data?.desc }}

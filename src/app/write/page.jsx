@@ -1,5 +1,7 @@
 "use client";
-
+import { ImFolderUpload } from "react-icons/im";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Image from "next/image";
 import styles from "./write.module.css";
 import { useEffect, useState } from "react";
@@ -37,22 +39,43 @@ const Page = () => {
       uploadTask.on(
         "state_changed",
         (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log("Upload is " + progress + "% done");
+         
+          
           switch (snapshot.state) {
             case "paused":
-              console.log("Upload is paused");
+              toast.error("Upload paused", {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "colored",
+                }); 
               break;
             case "running":
-              console.log("Upload is running");
+               
               break;
           }
         },
-        (error) => {},
+        (error) => {
+          console.error("Error uploading file:", error);
+          toast.error("Error uploading file"); // Display error toast
+        },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);
+            toast.success("File uploaded successfully", {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              progress: undefined,
+              theme: "colored",
+              }); 
           });
         }
       );
@@ -97,45 +120,56 @@ const Page = () => {
 
   return (
     <div className={styles.container}>
+      <ToastContainer />
       <input
         type="text"
         placeholder="Title"
         className={styles.input}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <select className={styles.select} onChange={(e) => setCatSlug(e.target.value)}>
-        <option value="style">style</option>
-        <option value="fashion">fashion</option>
-        <option value="food">food</option>
-        <option value="culture">culture</option>
-        <option value="travel">travel</option>
-        <option value="coding">coding</option>
-      </select>
-      <div className={styles.editor}>
-        <button className={styles.button} onClick={() => setOpen(!open)}>
-          <Image src="/plus.png" alt="" width={16} height={16} />
+
+      <div className={styles.radioGroup}>
+        <h3 className={styles.categoryHead}> Select Category type </h3>
+        <div className={styles.optionContainer}>
+          {["style", "fashion", "food", "culture", "travel", "coding"].map(
+            (category) => (
+              <div
+                key={category}
+                className={catSlug === category ? styles.selected : ""}
+              >
+                <input
+                  type="radio"
+                  id={category}
+                  name="category"
+                  value={category}
+                  onChange={(e) => setCatSlug(e.target.value)}
+                  checked={catSlug === category}
+                  className={styles.radioInput} // Add a class for styling purposes
+                />
+                <label htmlFor={category} className={styles.radioLabel}>
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </label>
+              </div>
+            )
+          )}
+        </div>
+      </div>
+
+      <div className={styles.imageUploadButton}>
+        <input
+          type="file"
+          id="image"
+          onChange={(e) => setFile(e.target.files[0])}
+          style={{ display: "none" }}
+        />
+        <button className={styles.addButton}>
+          <label htmlFor="image">
+            <ImFolderUpload /> Upload Image
+          </label>
         </button>
-        {open && (
-          <div className={styles.add}>
-            <input
-              type="file"
-              id="image"
-              onChange={(e) => setFile(e.target.files[0])}
-              style={{ display: "none" }}
-            />
-            <button className={styles.addButton}>
-              <label htmlFor="image">
-                <Image src="/image.png" alt="" width={16} height={16} />
-              </label>
-            </button>
-            <button className={styles.addButton}>
-              <Image src="/external.png" alt="" width={16} height={16} />
-            </button>
-            <button className={styles.addButton}>
-              <Image src="/video.png" alt="" width={16} height={16} />
-            </button>
-          </div>
-        )}
+      </div>
+
+      <div className={styles.editor}>
         <ReactQuill
           className={styles.textArea}
           theme="bubble"
@@ -144,8 +178,11 @@ const Page = () => {
           placeholder="Tell your story..."
         />
       </div>
+
       <div className={styles.buttonContainer}>
-        <button className={styles.publish} onClick={handleSubmit}>Publish</button>
+        <button className={styles.publish} onClick={handleSubmit}>
+          Publish
+        </button>
         <a href="/" className={styles.close}>
           Close
         </a>
