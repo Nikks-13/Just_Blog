@@ -2,11 +2,25 @@
     display: flex;
     justify-content: space-between;
 }
+.nextt,.prevv{
+font-size: 19px;
+vertical-align: middle;
+padding-bottom: 1.6px;
+
+}
+
+
 .button{
-    width: 100px;
+    width: 160px;
     border: none;
     padding: 16px;
-    background-color: rgb(175, 0, 0);
+    background-color: crimson;
     color: white;
     cursor: pointer;
+    border-radius: 5px;
+    vertical-align: middle;
+  
+}
+.button:disabled{
+    scale: 0;
 }
