@@ -18,7 +18,7 @@ import dynamic from "next/dynamic";
 
 const Page = () => {
   const { status } = useSession();
-  const ReactQuill = dynamic(() => import('react-quill').then((mod) => mod.Quill), {
+  const ReactQuill = dynamic(() => import('react-quill'), {
     ssr: false,
   });
   const router = useRouter();
