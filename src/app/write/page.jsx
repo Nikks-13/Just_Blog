@@ -22,8 +22,6 @@ const Page = () => {
     ssr: false,
   });
   const router = useRouter();
-
-  const [open, setOpen] = useState(false);
   const [file, setFile] = useState(null);
   const [media, setMedia] = useState("");
   const [value, setValue] = useState("");
