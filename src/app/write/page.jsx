@@ -14,13 +14,10 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
-import dynamic from "next/dynamic";
+import ReactQuill from "react-quill";
 
 const Page = () => {
   const { status } = useSession();
-  const ReactQuill = dynamic(() => import('react-quill'), {
-    ssr: false,
-  });
   const router = useRouter();
   const [file, setFile] = useState(null);
   const [media, setMedia] = useState("");
