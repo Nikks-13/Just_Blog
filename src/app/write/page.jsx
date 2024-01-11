@@ -2,7 +2,6 @@
 import { ImFolderUpload } from "react-icons/im";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Image from "next/image";
 import styles from "./write.module.css";
 import { useEffect, useState } from "react";
 import "react-quill/dist/quill.bubble.css";
@@ -15,10 +14,13 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
-import ReactQuill from "react-quill";
+import dynamic from "next/dynamic";
 
 const Page = () => {
   const { status } = useSession();
+  const ReactQuill = dynamic(() => import('react-quill').then((mod) => mod.Quill), {
+    ssr: false,
+  });
   const router = useRouter();
 
   const [open, setOpen] = useState(false);
