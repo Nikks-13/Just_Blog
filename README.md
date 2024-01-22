@@ -5,7 +5,7 @@
 
 Welcome to Just Blog, a powerful and customizable blog web app designed to simplify the art of blogging. Whether you're a seasoned writer, a tech enthusiast, or someone with a passion to share, My app provides an intuitive and feature-rich platform to express yourself and connect with your audience.
 
-Key Features:
+##Key Features
 
 Easy Content Creation: Streamline your writing process with a user-friendly editor that allows you to focus on your content without any distractions. From articles and essays to code snippets and multimedia, express your ideas effortlessly.
 
