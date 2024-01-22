@@ -1,7 +1,11 @@
 
 # Simple Blog Web App
+
+![App Screenshot](https://raw.githubusercontent.com/Nikks-13/Just_Blog/main/screenshot/screenshot.png)
+
 Welcome to Just Blog, a powerful and customizable blog web app designed to simplify the art of blogging. Whether you're a seasoned writer, a tech enthusiast, or someone with a passion to share, My app provides an intuitive and feature-rich platform to express yourself and connect with your audience.
 
+>>>>>>> 636f670 (changes)
 Key Features:
 
 Easy Content Creation:
